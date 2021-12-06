@@ -32,12 +32,10 @@ header,footer{
   transition: 0.2s ease-out;
 
 }
-.cityBox{
-  /* background-color: rgba(182, 178, 178, 0.308); */
-}
 
 .temp{
-  font-size: x-large;
+  font-size: xx-large;
   font-weight: 900;
+  text-shadow: 0px 3px rgba(0, 0, 0,0.5);
   
 }
