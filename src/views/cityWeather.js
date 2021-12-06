@@ -62,11 +62,7 @@ export async function cityBox(city) {
       temperature.textContent = `${Math.round(weather.main.temp)} °C`;
       temperature.className = 'temp';
       weatherStatus.textContent = `${weather.weather[0].main}`;
-      // weatherStatusImage = await setWeatherStatusImage(
-      //   getDate(now),
-      //   weather.weather[0].main,
-      //   weatherStatusImage
-      // );
+
       highLow.textContent = `${Math.round(
         weather.main.temp_min
       )} °C / ${Math.round(weather.main.temp_max)} °C`;
