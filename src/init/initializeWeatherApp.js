@@ -2,18 +2,18 @@
 
 
 import { getDOMElement, clearDOMElement } from '../utils/DOMUtils.js';
-import { cityBox } from '../views/cityWeather.js';
+import { cityBox } from '../views/cityWeatherView.js';
 
 export async function initialize() {
   const globalWeatherContainer = getDOMElement('global-forecasting');
-  clearDOMElement(globalWeatherContainer);
   const requestedCity = getDOMElement('search-box');
-
+  clearDOMElement(globalWeatherContainer);
+  // get the weather forecast for 3 specific cities
   globalWeatherContainer.appendChild(await cityBox('New York'));
   globalWeatherContainer.appendChild(await cityBox('Cairo'));
   globalWeatherContainer.appendChild(await cityBox('Amsterdam'));
   const requestedWeatherContainer = getDOMElement('requested-forecasting');
-  // get the weather forecast for a specific city
+  // get the weather forecast for a user requested city
   requestedCity.addEventListener('keypress', async (evnt) => {
     if (evnt.key === 'Enter') {
       const cityForecast = await cityBox(requestedCity.value);

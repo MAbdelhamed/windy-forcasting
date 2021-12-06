@@ -1,12 +1,6 @@
 'use strict';
-import {
-  getDOMElement,
-  createDOMElement,
-  clearDOMElement,
-} from '../utils/DOMUtils.js';
+import { createDOMElement, clearDOMElement } from '../utils/DOMUtils.js';
 import { fetchWeather } from '../API/fetchAPI.js';
-import { setWeatherStatusImage } from '../handlers/weatherHandler.js';
-import { initialize } from '../init/initializeWeatherApp.js';
 
 function getDate(now) {
   const months = [
@@ -47,7 +41,7 @@ export async function cityBox(city) {
   date.textContent = getDate(now);
   const temperature = createDOMElement('h3');
   const weatherStatus = createDOMElement('h3');
-  // const weatherStatusImage = createDOMElement('img');
+  const weatherStatusImage = createDOMElement('img');
   const highLow = createDOMElement('h4');
 
   if (city === '') {
@@ -62,7 +56,8 @@ export async function cityBox(city) {
       temperature.textContent = `${Math.round(weather.main.temp)} °C`;
       temperature.className = 'temp';
       weatherStatus.textContent = `${weather.weather[0].main}`;
-
+      weatherStatusImage.src = `http://openweathermap.org/img/wn/${weather.weather[0].icon}.png`;
+      weatherStatusImage.alt = `${weather.weather[0].main}`;
       highLow.textContent = `${Math.round(
         weather.main.temp_min
       )} °C / ${Math.round(weather.main.temp_max)} °C`;
@@ -70,14 +65,14 @@ export async function cityBox(city) {
     } catch (error) {
       setTimeout(function () {
         alert('Invalid city name ,Please Enter a valid city name');
-        initialize();
-      }, 1000);
-      throw error(error.message);
+      }, 100);
+      throw error.message;
     }
     cityContainer.appendChild(cityName);
     cityContainer.appendChild(date);
     cityContainer.appendChild(temperature);
     cityContainer.appendChild(weatherStatus);
+    cityContainer.appendChild(weatherStatusImage);
     cityContainer.appendChild(highLow);
   }
   return cityContainer;

@@ -1,6 +1,10 @@
 body{
-  background-image: url("./Images/background-3.png") ;
+  background-image: url("./Images/background.png") ;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
+
   font-family: cursive;
 }
 header,footer{
