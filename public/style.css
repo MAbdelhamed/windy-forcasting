@@ -10,3 +10,9 @@ header,footer{
   flex-direction: row;
   justify-content: space-between;
 }
+#requested-forecasting{
+  background-color: rgb(189, 178, 178);
+  margin: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
