@@ -11,15 +11,15 @@ export const clearDOMElement = (DOMElement) => {
  * This function creates a DOM element with the given tag.
  * In the options parameter it is possible to add some extra data to it:
  *
- *  class - the class that contains this element
+ *  id - the id of the element
  */
 export const createDOMElement = (tag, options) => {
-  const { className } = options || {};
+  const { id } = options || {};
 
   const element = document.createElement(tag);
 
-  if (className != null) {
-    element.class = className;
+  if (id != null) {
+    element.id = id;
   }
 
   return element;

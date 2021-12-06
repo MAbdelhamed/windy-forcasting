@@ -1,5 +1,5 @@
 'use strict';
-import { API } from '../../public/data.js';
+import { API } from '../data.js';
 
 export async function fetchWeather(city = 'Cairo') {
   const weather = await fetch(

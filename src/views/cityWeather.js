@@ -52,6 +52,7 @@ export async function cityBox(city = '') {
     temperature.textContent = `Temperature in °C`;
     weatherStatus.textContent = `Weather status`;
     highLow.textContent = `High Low in °C`;
+    
   } else {
     try {
       const weather = await fetchWeather(city);
@@ -61,6 +62,7 @@ export async function cityBox(city = '') {
       highLow.textContent = `${Math.round(
         weather.main.temp_min
       )} °C / ${Math.round(weather.main.temp_max)} °C`;
+      
     } catch (error) {
       throw console.log(error);
     }
