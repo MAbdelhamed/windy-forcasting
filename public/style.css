@@ -1,11 +1,17 @@
+body{
+  background-image: url("./Images/background.jpeg") ;
+  background-size: cover;
+}
 header,footer{
   background-color: black;
   height: 50px;
   margin: 1.5rem;
 }
 #global-forecasting{
+  
   background-color: rgb(228, 217, 217);
   margin: 1.5rem;
+  padding: 0.5rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -13,6 +19,8 @@ header,footer{
 #requested-forecasting{
   background-color: rgb(189, 178, 178);
   margin: 1.5rem;
+    padding: 0.5rem;
+
   display: flex;
   justify-content: center;
 }

@@ -5,6 +5,7 @@ import {
   clearDOMElement,
 } from '../utils/DOMUtils.js';
 import { fetchWeather } from '../API/fetchAPI.js';
+import { setWeatherStatusImage } from '../handlers/weatherHandler.js';
 
 function getDate(now) {
   const months = [
@@ -44,7 +45,8 @@ export async function cityBox(city = '') {
   let now = new Date();
   date.textContent = getDate(now);
   const temperature = createDOMElement('h3');
-  const weatherStatus = createDOMElement('h4');
+  const weatherStatus = createDOMElement('div');
+  const weatherStatusImage = createDOMElement('img');
   const highLow = createDOMElement('h4');
 
   if (city === '') {
@@ -52,17 +54,24 @@ export async function cityBox(city = '') {
     temperature.textContent = `Temperature in °C`;
     weatherStatus.textContent = `Weather status`;
     highLow.textContent = `High Low in °C`;
-    
   } else {
     try {
       const weather = await fetchWeather(city);
       cityName.textContent = `${weather.name} , ${weather.sys.country}`;
       temperature.textContent = `${Math.round(weather.main.temp)} °C`;
+      weatherStatus.style.display = 'flex';
+      weatherStatus.style.flexDirection = 'row';
+
       weatherStatus.textContent = `${weather.weather[0].main}`;
+      // weatherStatusImage = await setWeatherStatusImage(
+      //   getDate(now),
+      //   weather.weather[0].main,
+      //   weatherStatusImage
+      // );
       highLow.textContent = `${Math.round(
         weather.main.temp_min
       )} °C / ${Math.round(weather.main.temp_max)} °C`;
-      
+      cityContainer.id = weather.name;
     } catch (error) {
       throw console.log(error);
     }
