@@ -7,7 +7,7 @@ import {
 } from '../utils/DOMUtils.js';
 import { cityBox } from '../views/cityWeather.js';
 
-async function initialize() {
+export async function initialize() {
   const globalWeatherContainer = getDOMElement('global-forecasting');
 
   globalWeatherContainer.appendChild(await cityBox('New York'));
@@ -15,7 +15,7 @@ async function initialize() {
   globalWeatherContainer.appendChild(await cityBox('Amsterdam'));
   const requestedWeatherContainer = getDOMElement('requested-forecasting');
 
-  requestedWeatherContainer.appendChild(await cityBox('Winterswijk'));
+  requestedWeatherContainer.appendChild(await cityBox('Cairo'));
 }
 
 // Step one initialize the weather forecasting
