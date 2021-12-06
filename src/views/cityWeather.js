@@ -47,7 +47,7 @@ export async function cityBox(city) {
   date.textContent = getDate(now);
   const temperature = createDOMElement('h3');
   const weatherStatus = createDOMElement('h3');
-  const weatherStatusImage = createDOMElement('img');
+  // const weatherStatusImage = createDOMElement('img');
   const highLow = createDOMElement('h4');
 
   if (city === '') {
