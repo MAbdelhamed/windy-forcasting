@@ -1,41 +1,22 @@
 'use strict';
 
 import {
-  QUESTION_CONTAINER_ID,
-  QUIZ_CONTAINER_ID,
-  SCORE_CONTAINER_ID,
-  HINT_CONTAINER_ID,
-  TIMER_ID,
-} from '../constants.js';
-import { showCurrentQuestion } from '../handlers/questionHandlers.js';
-import { createDOMElement, getDOMElement } from '../utils/DOMUtils.js';
-import { createNextQuestionButtonElement } from '../views/questionViews.js';
-import { quizData } from '../data.js';
+  getDOMElement,
+  createDOMElement,
+  clearDOMElement,
+} from '../utils/DOMUtils.js';
+import { cityBox } from '../views/cityWeather.js';
 
-const initializeQuiz = () => {
-  quizData.currentQuestionIndex = 0;
-  setupQuizHTML();
-  showCurrentQuestion();
-};
+async function initialize() {
+  const globalWeatherContainer = getDOMElement('global-forecasting');
 
-const setupQuizHTML = () => {
-  const userInterfaceContainer = getDOMElement('user-interface');
-  const quizContainer = createDOMElement('div', { id: QUIZ_CONTAINER_ID });
-  const questionContainer = createDOMElement('div', {
-    id: QUESTION_CONTAINER_ID,
-  });
-  const timerElement = createDOMElement('div', { id: TIMER_ID });
-  const scoreContainer = createDOMElement('div', { id: SCORE_CONTAINER_ID });
-  const hintContainer = createDOMElement('div', { id: HINT_CONTAINER_ID });
-  const nextQuestionButton = createNextQuestionButtonElement();
+  globalWeatherContainer.appendChild(await cityBox('New York'));
+  globalWeatherContainer.appendChild(await cityBox('Cairo'));
+  globalWeatherContainer.appendChild(await cityBox('Amsterdam'));
+  const requestedWeatherContainer = getDOMElement('requested-forecasting');
 
-  userInterfaceContainer.appendChild(quizContainer);
-  quizContainer.appendChild(timerElement);
-  quizContainer.appendChild(scoreContainer);
-  quizContainer.appendChild(questionContainer);
-  questionContainer.appendChild(hintContainer);
-  quizContainer.appendChild(nextQuestionButton);
-};
+  requestedWeatherContainer.appendChild(await cityBox('Winterswijk'));
+}
 
-// Step one initialize the quiz
-window.addEventListener('load', initializeQuiz);
+// Step one initialize the weather forecasting
+window.addEventListener('load', initialize);
