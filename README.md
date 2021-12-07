@@ -1,7 +1,7 @@
 # Windy forecasting
 
 It is a simple weather forecasting app contain 2 divs. 
-The first one initialized  with 3 random cities weather cards.
+The first one initialized  with 3 random capitals weather cards.
 The second one is a card for a city requested by the user.
 
 Each card has details like the city name, its country , today's day and date ,
