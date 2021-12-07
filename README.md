@@ -8,7 +8,7 @@ Each card has details like the city name, its country , today's day and date ,
 temperature in Celsius , weather status and simple image for this status and 
 finally the high-low temperature for the whole day 
 
-Api [openweathermap](#https://openweathermap.org/) 
+Api [openweathermap](https://openweathermap.org/) 
 
 ![Windy forecasting screenshot](https://github.com/MAbdelhamed/windy-forcasting/blob/main/public/Images/Screenshot-windy-forecasting.png?raw=true)
 
