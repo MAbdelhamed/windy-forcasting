@@ -26,6 +26,7 @@ src
 └── utils
 └── views
 └── data.js
+└── constants.js
 index.html
 style.css
 ```
@@ -36,7 +37,8 @@ style.css
 - `API` this contains our code that Fetch API return a promise that resolves into a Response object. To get the actual data
 - `utils` this contains code that are pure functions and can be used throughout the application. These functions take data and give back a result. They should not interact with anything outside of their scope!
 - `views` this contains code to define what the DOM will look like. They will create the DOM element and read/write from/to the dom
-- `data.js` file contains the variables we use within the whole projects such api data, cityNames etc. 
+- `data.js` file contains the variables we use within the whole projects such api data and cityNames. 
+- `constants.js` file contains the constants dom elements  
 - `index.html` it is the starting web page 
 - `style.css` it contains the styling and the decoration of html tags
 

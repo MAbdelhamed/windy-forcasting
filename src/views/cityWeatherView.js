@@ -2,6 +2,7 @@
 import { createDOMElement, clearDOMElement } from '../utils/DOMUtils.js';
 import { fetchWeather } from '../API/fetchAPI.js';
 
+
 function getDate(now) {
   const months = [
     'January',
