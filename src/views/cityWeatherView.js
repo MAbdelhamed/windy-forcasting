@@ -38,8 +38,6 @@ export async function cityBox(city) {
   clearDOMElement(cityContainer);
   const cityName = createDOMElement('h2');
   const date = createDOMElement('h5');
-  let now = new Date();
-  date.textContent = getDate(now);
   const temperature = createDOMElement('h3');
   const weatherStatus = createDOMElement('h3');
   const weatherStatusImage = createDOMElement('img');
@@ -53,6 +51,8 @@ export async function cityBox(city) {
   } else {
     try {
       const weather = await fetchWeather(city);
+      const now = new Date();
+      date.textContent = getDate(now);
       cityName.textContent = `${weather.name} , ${weather.sys.country}`;
       temperature.textContent = `${Math.round(weather.main.temp)} °C`;
       temperature.className = 'temp';
@@ -65,7 +65,7 @@ export async function cityBox(city) {
       cityContainer.className = 'col-sm-3 city-box';
     } catch (error) {
       setTimeout(function () {
-        alert('Invalid city name ,Please Enter a valid city name');
+        alert('Invalid city name, Please Enter a valid city name');
       }, 100);
       throw error.message;
     }
