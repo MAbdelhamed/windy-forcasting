@@ -61,7 +61,7 @@ export async function cityBox(city) {
       highLow.textContent = `${Math.round(
         weather.main.temp_min
       )} °C / ${Math.round(weather.main.temp_max)} °C`;
-      cityContainer.className = 'cityBox';
+      cityContainer.className = 'col-sm-3 city-box';
     } catch (error) {
       setTimeout(function () {
         alert('Invalid city name ,Please Enter a valid city name');
