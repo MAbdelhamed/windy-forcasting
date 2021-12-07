@@ -6,7 +6,9 @@ The second one is a card for a city requested by the user.
 
 Each card has details like the city name, its country , today's day and date ,
 temperature in Celsius , weather status and simple image for this status and 
-finally the high-low temperature for the whole day 
+finally the high-low temperature for the whole day
+
+you can try now [Windy Forecasting](https://mabdelhamed.github.io/windy-forcasting/)
 
 Api [openweathermap](https://openweathermap.org/) 
 
