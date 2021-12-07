@@ -4,9 +4,12 @@ It is a simple weather forecasting app contain 2 divs.
 The first one initialized  with 3 random cities weather cards.
 The second one is a card for a city requested by the user.
 
-Each card has details like the city name, its country , today day and date ,
+Each card has details like the city name, its country , today's day and date ,
 temperature in Celsius , weather status and simple image for this status and 
 finally the high-low temperature for the whole day 
+
+![Windy forecasting screenshot](https://github.com/MAbdelhamed/windy-forcasting/blob/main/public/Images/Screenshot-windy-forecasting.png?raw=true)
+
 # Structure
 
 Let's run through the folders:
